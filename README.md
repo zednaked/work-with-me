@@ -35,11 +35,34 @@ Prices are fixed per scope and agreed before any work starts.
   12 locales, 3,673 translation pairs measured: buttons expand at a p95 of 2.00x,
   and `.length` lies for Hindi, Nepali, Arabic and German.
 - **Games in the browser:** Ciberteia (multiplayer, authoritative backend) and
-  Rinha (real-time strategy) at [zedcave.itch.io](https://zedcave.itch.io).
+  Rinha (real-time strategy; one web performance pass took the opening from
+  1,565 draw calls a frame to 29, and a 700-unit late game from 36 to 57 fps)
+  at [zedcave.itch.io](https://zedcave.itch.io).
 - **Art and illustration:** [zednaked.github.io/portfolio](https://zednaked.github.io/portfolio/).
 - **Tools:** [ZGT](https://github.com/zednaked/zgt), a terminal inside the Godot
   editor; [omarchy-zero](https://github.com/zednaked/omarchy-zero); two plugins
   that passed review in the Omarchy marketplace.
+
+## What changed after I looked
+
+Three open-source projects, three maintainers who read a measurement of mine and
+shipped a change. All of it is public in their repos.
+
+- **[Bachy](https://github.com/Paul-M-Kallarackal/Bachy)**, a keyboard-first file
+  manager for Hyprland. I measured what its required dependencies pulled in over
+  a plain Arch base and where the weight came from: the whole Qt WebEngine, only
+  for PDF previews. The next morning the PDF, media and font support were
+  optional, with a fallback and a regression test: **564 MiB less**, two thirds of
+  the total. The maintainer wrote it up in
+  [DEPENDENCY-AND-STARTUP-AUDIT.md](https://github.com/Paul-M-Kallarackal/Bachy/blob/main/docs/DEPENDENCY-AND-STARTUP-AUDIT.md).
+- **[lumen](https://github.com/blackopsrepl/lumen)**: an accessibility report,
+  [lumen#2](https://github.com/blackopsrepl/lumen/issues/2), on a Qt tree that
+  looks populated to the accessibility API when it is structurally empty. It
+  was implemented and shipped in v0.13.6 and v0.13.7.
+- **[zenbook-duo-hyprland](https://github.com/laithm/zenbook-duo-hyprland)**: the
+  display state was lost on every Hyprland config reload. It was
+  [fixed within the hour](https://github.com/laithm/zenbook-duo-hyprland/commit/dd626ef7f46b807626bc547f7d78e8ba508e7ae4),
+  and I reviewed the commit.
 
 ## How to start
 
