@@ -26,8 +26,9 @@ Prices are fixed per scope and agreed before any work starts.
 ## What the work looks like
 
 - **[godot-web-build-budget](https://github.com/zednaked/godot-web-build-budget)** —
-  five production web builds, each 48% lighter or more with no assets deleted,
-  and the first one measured again a month later with 3% left to give.
+  sixteen production web builds, cut 23% to 76% with no assets deleted, the
+  range set by how much of each pack was lossless art; the first one measured
+  again a month later with 3% left to give.
   What was actually in the `.pck`, why the obvious fix made it bigger, and a
   7 MB file nothing reads. Became
   [godot-proposals#15505](https://github.com/godotengine/godot-proposals/issues/15505).
