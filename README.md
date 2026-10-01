@@ -32,6 +32,11 @@ Prices are fixed per scope and agreed before any work starts.
   What was actually in the `.pck`, why the obvious fix made it bigger, and a
   7 MB file nothing reads. Became
   [godot-proposals#15505](https://github.com/godotengine/godot-proposals/issues/15505).
+- **[playable-budget](https://github.com/zednaked/playable-budget)** —
+  a playable ad in one HTML file at 630 KB, 31% of Meta's 2 MB cap, every byte
+  accounted for: what the library, the art and the base64 inlining each cost,
+  and why an empty Godot web export (39.8 MB) can't enter the format.
+  [Play it](https://zednaked.github.io/playable-budget/).
 - **[godot-i18n-that-holds-up](https://github.com/zednaked/godot-i18n-that-holds-up)** —
   12 locales, 3,673 translation pairs measured: buttons expand at a p95 of 2.00x,
   and `.length` lies for Hindi, Nepali, Arabic and German.
