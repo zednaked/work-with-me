@@ -15,7 +15,7 @@ hands. Client work is under NDA; the method and the measurements are public.
 |---|---|---|---|
 | **Web game, start to finish** | a casual browser game built in Godot, one core mechanic, with the art and animation included, shipped under a size budget you can check | 4–6 weeks | **USD 8,000 – 15,000** |
 | **Bring a Godot game to the browser** | your existing project exported to the web and made to load: import settings, export filter, loading, localization, measured before and after | 2–3 weeks | **from USD 4,000** |
-| **Playable ad** | an interactive ad for a mobile game, built to the network's size limits | 1–2 weeks | **USD 2,500 – 5,000** each |
+| **Playable ad** | an interactive ad for a mobile game, built in PixiJS as one HTML file under the network's cap, with the byte inventory: library, art, and the base64 tax ([measured example](https://github.com/zednaked/playable-budget)) | 1–2 weeks | **USD 2,500 – 5,000** each |
 | **Web build audit** | a per-file inventory of your exported build, measured as transfer size, and the ordered list of what to cut with the megabytes each saves. No access to your source | 3 business days | **USD 1,200** |
 | **Audit + fixes** | the audit, then the fixes applied in your project and the build measured again | 5 business days | **USD 2,400** |
 | **Catalogue or platform** | many titles, or a pipeline that publishes other people's games: the size rules become a gate in CI | scoped together | **from USD 4,000** |
