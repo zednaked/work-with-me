@@ -51,8 +51,8 @@ Prices are fixed per scope and agreed before any work starts.
 
 ## What changed after I looked
 
-Three open-source projects, three maintainers who read a measurement of mine and
-shipped a change. All of it is public in their repos.
+Seven projects, seven people who read a measurement of mine and shipped a
+change. All of it is public, in their repos or in their own replies.
 
 - **[Bachy](https://github.com/Paul-M-Kallarackal/Bachy)**, a keyboard-first file
   manager for Hyprland. I measured what its required dependencies pulled in over
@@ -69,6 +69,20 @@ shipped a change. All of it is public in their repos.
   display state was lost on every Hyprland config reload. It was
   [fixed within the hour](https://github.com/laithm/zenbook-duo-hyprland/commit/dd626ef7f46b807626bc547f7d78e8ba508e7ae4),
   and I reviewed the commit.
+- **Orb Skirmish**, a browser multiplayer arena (Phaser + Colyseus). Alone in a
+  match, the room sent a full ~6.3 KB snapshot 20 times a second. The developer
+  moved to Colyseus Schema the same day and measured it in production, one guest
+  and seven bots: **7.6 → 0.26 MB a minute**, still at 20 updates a second.
+- **The Last Bite**, a three.js game: 9.7 MB of the 22 MB first load was a
+  second copy of the character mesh and textures, there only to carry a 20 KB
+  run clip. Shipping the clip alone took the first load to **12.4 MB**.
+- **Sky Soarer**, hand tracking with MediaPipe in the browser: the camera path
+  carried a palm detector the chosen model never uses. A lite-only data file
+  with a checksum guard took it **from 7.8 to 5.4 MB**.
+- **[ink-of-the-forgotten-path](https://www.npmjs.com/package/ink-of-the-forgotten-path)**,
+  a martial-arts motion package: strike speed in m/s came from normalized screen
+  coordinates times a fixed constant, so it changed with distance to the camera.
+  v0.1.2 uses metric world landmarks by default and labels what the HUD measures.
 
 ## How to start
 
