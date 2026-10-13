@@ -51,9 +51,16 @@ Prices are fixed per scope and agreed before any work starts.
 
 ## What changed after I looked
 
-Seven projects, seven people who read a measurement of mine and shipped a
-change. All of it is public, in their repos or in their own replies.
+Eight projects, eight people who read a measurement of mine and shipped a
+change. All of it is public, in their repos, their replies or their own posts.
 
+- **[Audible Field](https://audible-field.vercel.app)**, a spatial sound piece by
+  Gary Boodhoo (formerly ZeniMax, LucasArts, EA). Most of the first load was
+  24-bit stereo WAV, and the engine folds every bed to mono before its own
+  panner, so the second channel never reached anyone's ears. He moved runtime
+  audio to mono Opus and
+  [wrote it up himself](https://www.linkedin.com/feed/update/urn:li:activity:7515588700316110848/):
+  roughly 90% less audio transferred. First load, measured: **32.6 → 1.86 MB**.
 - **[Bachy](https://github.com/Paul-M-Kallarackal/Bachy)**, a keyboard-first file
   manager for Hyprland. I measured what its required dependencies pulled in over
   a plain Arch base and where the weight came from: the whole Qt WebEngine, only
