@@ -40,6 +40,14 @@ Prices are fixed per scope and agreed before any work starts.
 - **[godot-i18n-that-holds-up](https://github.com/zednaked/godot-i18n-that-holds-up)** —
   12 locales, 3,673 translation pairs measured: buttons expand at a p95 of 2.00x,
   and `.length` lies for Hindi, Nepali, Arabic and German.
+- **[Jangada](https://github.com/zednaked/jangada)** — alternative firmware in
+  C++ for the M-VAVE FM-1, a €70 pocket synth: ten real-time synth engines (one
+  a 6-operator FM that reads Dexed patches), 8 voices over 4 tracks, a 64-step
+  sequencer, and a [Studio](https://zednaked.github.io/jangada/webapp/studio/)
+  that plays it in the browser. 306 firmware downloads in its first nine days,
+  listed in the community's one-click FM-1 Firmware Hub; its ratchet went
+  upstream into [Felucca](https://github.com/hugelton/Felucca) 1.0.5 with me as
+  co-author.
 - **Games in the browser:** Ciberteia (multiplayer, authoritative backend) and
   Rinha (real-time strategy; one web performance pass took the opening from
   1,565 draw calls a frame to 29, and a 700-unit late game from 36 to 57 fps)
