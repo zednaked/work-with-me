@@ -41,10 +41,11 @@ Prices are fixed per scope and agreed before any work starts.
   12 locales, 3,673 translation pairs measured: buttons expand at a p95 of 2.00x,
   and `.length` lies for Hindi, Nepali, Arabic and German.
 - **[Jangada](https://github.com/zednaked/jangada)** — alternative firmware in
-  C++ for the M-VAVE FM-1, a €70 pocket synth: ten real-time synth engines (one
-  a 6-operator FM that reads Dexed patches), 8 voices over 4 tracks, a 64-step
-  sequencer, and a [Studio](https://zednaked.github.io/jangada/webapp/studio/)
-  that plays it in the browser. 306 firmware downloads in its first nine days,
+  C++ for the M-VAVE FM-1, a €70 pocket synth: thirteen real-time synth engines
+  (one a 6-operator FM that reads Dexed patches), 8 voices over 4 tracks, a
+  64-step sequencer, and a [Studio](https://zednaked.github.io/jangada/webapp/studio/)
+  that plays it in the browser. Version 1.0 and 352 firmware downloads in its
+  first ten days,
   listed in the community's one-click FM-1 Firmware Hub; its ratchet went
   upstream into [Felucca](https://github.com/hugelton/Felucca) 1.0.5 with me as
   co-author.
@@ -59,8 +60,8 @@ Prices are fixed per scope and agreed before any work starts.
 
 ## What changed after I looked
 
-Eight projects, eight people who read a measurement of mine and shipped a
-change. All of it is public, in their repos, their replies or their own posts.
+Thirteen projects, thirteen people who read a measurement of mine and shipped
+a change. All of it is public, in their repos, their replies or their own posts.
 
 - **[Audible Field](https://audible-field.vercel.app)**, a spatial sound piece by
   Gary Boodhoo (formerly ZeniMax, LucasArts, EA). Most of the first load was
@@ -84,6 +85,21 @@ change. All of it is public, in their repos, their replies or their own posts.
   display state was lost on every Hyprland config reload. It was
   [fixed within the hour](https://github.com/laithm/zenbook-duo-hyprland/commit/dd626ef7f46b807626bc547f7d78e8ba508e7ae4),
   and I reviewed the commit.
+- **[EchoMind](https://github.com/sewox/EchoMind)**, an on-device meeting
+  transcriber: system audio was recorded from the output device chosen at the
+  start, so switching to headphones mid-meeting silently dropped the other side
+  of the call. It now follows the device on Linux and Windows,
+  [PR #111](https://github.com/sewox/EchoMind/pull/111), released in v0.2.16
+  the next day.
+- **[pipewire-auto-router](https://github.com/klasnalol/pipewire-auto-router)**:
+  the watcher polled every two seconds, so a new stream played on the default
+  device for up to two seconds before it was routed. 0.2.1 reacts to PipeWire
+  graph events instead ([commit](https://github.com/klasnalol/pipewire-auto-router/commit/8c2b8e13bdcd46cc98162f944602ab4d586d8e78)).
+- **[CrunchyPy](https://github.com/Yahiake/CrunchyPy)**, a neural guitar amp in
+  JUCE: in the author's previous plugin the network, trained at 48 kHz, ran at
+  whatever rate the host used, so at 96 kHz the mid scoop moved from about
+  1 kHz to 2 kHz. His next one resamples to 48 kHz around the model and reports
+  the latency to the host.
 - **Orb Skirmish**, a browser multiplayer arena (Phaser + Colyseus). Alone in a
   match, the room sent a full ~6.3 KB snapshot 20 times a second. The developer
   moved to Colyseus Schema the same day and measured it in production, one guest
@@ -94,6 +110,13 @@ change. All of it is public, in their repos, their replies or their own posts.
 - **Sky Soarer**, hand tracking with MediaPipe in the browser: the camera path
   carried a palm detector the chosen model never uses. A lite-only data file
   with a checksum guard took it **from 7.8 to 5.4 MB**.
+- **A cache-hierarchy visualizer** in three.js with a C++ IDE in the browser:
+  nginx served the bundle uncompressed, because its `gzip_types` covers only
+  HTML by default. Compression on, the IDE loaded lazily and three.js in its own
+  bundle took the initial JavaScript **from 671 KiB to 140–180 KiB**.
+- **Dust**, an idle game from Mob Machine: progress only counted while the tab
+  was in front, so four minutes in the background earned 0.14 of a resource
+  that pays 1.0 a second. Fixed the next day.
 - **[ink-of-the-forgotten-path](https://www.npmjs.com/package/ink-of-the-forgotten-path)**,
   a martial-arts motion package: strike speed in m/s came from normalized screen
   coordinates times a fixed constant, so it changed with distance to the camera.
