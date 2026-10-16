@@ -52,7 +52,7 @@ Prices are fixed per scope and agreed before any work starts.
   listed in the community's one-click FM-1 Firmware Hub; its ratchet went
   upstream into [Felucca](https://github.com/hugelton/Felucca) 1.0.5 with me as
   co-author. 1.0.1 opened an editor protocol a DAW or a mixer can drive, after
-  a user asked to save the synth's edit buffer with his projects.
+  a user asked to save the synth's edit buffer with their projects.
 - **[Nirbija](https://github.com/zednaked/Nirbija)** — a Linux mixer that is also
   an instrument, in C++ and Qt: LV2, CLAP and VST3 over JACK or PipeWire, with a
   drone synth, sampler, looper and sequencers built in. Since 0.6.0 the FM-1
