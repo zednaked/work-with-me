@@ -32,6 +32,9 @@ Prices are fixed per scope and agreed before any work starts.
   What was actually in the `.pck`, why the obvious fix made it bigger, and a
   7 MB file nothing reads. Became
   [godot-proposals#15505](https://github.com/godotengine/godot-proposals/issues/15505).
+  The sixth edition treats memory as a second budget: an iPhone build losing its
+  WebGL context went from 561 to 217 MB of live texture, because the GPU keeps
+  every frame as full RGBA no matter how small the PNG was.
 - **[playable-budget](https://github.com/zednaked/playable-budget)** —
   a playable ad in one HTML file at 630 KB, 31% of Meta's 2 MB cap, every byte
   accounted for: what the library, the art and the base64 inlining each cost,
@@ -48,19 +51,26 @@ Prices are fixed per scope and agreed before any work starts.
   first ten days,
   listed in the community's one-click FM-1 Firmware Hub; its ratchet went
   upstream into [Felucca](https://github.com/hugelton/Felucca) 1.0.5 with me as
-  co-author.
+  co-author. 1.0.1 opened an editor protocol a DAW or a mixer can drive, after
+  a user asked to save the synth's edit buffer with his projects.
+- **[Nirbija](https://github.com/zednaked/Nirbija)** — a Linux mixer that is also
+  an instrument, in C++ and Qt: LV2, CLAP and VST3 over JACK or PipeWire, with a
+  drone synth, sampler, looper and sequencers built in. Since 0.6.0 the FM-1
+  with Jangada is a strip of its own: its project saved in the session, its four
+  tracks in an editor, and a scene that swaps a track's whole sound on the bar line.
 - **Games in the browser:** Ciberteia (multiplayer, authoritative backend) and
   Rinha (real-time strategy; one web performance pass took the opening from
   1,565 draw calls a frame to 29, and a 700-unit late game from 36 to 57 fps)
   at [zedcave.itch.io](https://zedcave.itch.io).
 - **Art and illustration:** [zednaked.github.io/portfolio](https://zednaked.github.io/portfolio/).
 - **Tools:** [ZGT](https://github.com/zednaked/zgt), a terminal inside the Godot
-  editor; [omarchy-zero](https://github.com/zednaked/omarchy-zero); two plugins
+  editor; [godot-unreachable](https://github.com/zednaked/godot-unreachable),
+  which lists the files a Godot project ships that nothing can reach; [omarchy-zero](https://github.com/zednaked/omarchy-zero); two plugins
   that passed review in the Omarchy marketplace.
 
 ## What changed after I looked
 
-Thirteen projects, thirteen people who read a measurement of mine and shipped
+Sixteen projects, sixteen people who read a measurement of mine and shipped
 a change. All of it is public, in their repos, their replies or their own posts.
 
 - **[Audible Field](https://audible-field.vercel.app)**, a spatial sound piece by
@@ -121,6 +131,18 @@ a change. All of it is public, in their repos, their replies or their own posts.
   a martial-arts motion package: strike speed in m/s came from normalized screen
   coordinates times a fixed constant, so it changed with distance to the camera.
   v0.1.2 uses metric world landmarks by default and labels what the HUD measures.
+- **[Kiln](https://github.com/MPanknin/kiln-render)**, a WebGPU volume viewer for
+  OME-Zarr microscopy data: the texture atlas was always `r16float`, so a 16-bit
+  volume kept 7,169 of its 65,536 levels and the bright half moved in steps of
+  32. Two days later the atlas stores uint16 losslessly
+  ([commit](https://github.com/MPanknin/kiln-render/commit/1649067)).
+- **Neutro Dance**, a three.js and Web Audio dance app: every song's decoded PCM
+  stayed in memory, about 300 MB across five tracks on a phone. The developer
+  measured 48 to 75 MiB a track himself and shipped the fix the same day: only the
+  playing track keeps its PCM.
+- **Circat Thought**, a local AI sampler plugin in JUCE: the browser preview read
+  the WAV from disk inside the audio callback. v1.1.2 decodes the clip into
+  memory on the message thread, so the audio thread never touches the disk.
 
 ## How to start
 
