@@ -52,12 +52,15 @@ Prices are fixed per scope and agreed before any work starts.
   listed in the community's one-click FM-1 Firmware Hub; its ratchet went
   upstream into [Felucca](https://github.com/hugelton/Felucca) 1.0.5 with me as
   co-author. 1.0.1 opened an editor protocol a DAW or a mixer can drive, after
-  a user asked to save the synth's edit buffer with their projects.
+  a user asked to save the synth's edit buffer with their projects; Nirbija,
+  below, is the first host that speaks it.
 - **[Nirbija](https://github.com/zednaked/Nirbija)** — a Linux mixer that is also
   an instrument, in C++ and Qt: LV2, CLAP and VST3 over JACK or PipeWire, with a
-  drone synth, sampler, looper and sequencers built in. Since 0.6.0 the FM-1
-  with Jangada is a strip of its own: its project saved in the session, its four
-  tracks in an editor, and a scene that swaps a track's whole sound on the bar line.
+  drone synth, sampler, looper and sequencers built in. **Since 0.6.0 it drives
+  the FM-1 running Jangada: I wrote both ends, the firmware on the device, the
+  host on the computer, and the SysEx protocol between them.** The FM-1 is a
+  strip of its own: its project saved in the session, its four tracks in an
+  editor, and a scene that swaps a track's whole sound on the bar line.
 - **Games in the browser:** Ciberteia (multiplayer, authoritative backend) and
   Rinha (real-time strategy; one web performance pass took the opening from
   1,565 draw calls a frame to 29, and a 700-unit late game from 36 to 57 fps)
