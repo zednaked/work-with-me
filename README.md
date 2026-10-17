@@ -73,7 +73,7 @@ Prices are fixed per scope and agreed before any work starts.
 
 ## What changed after I looked
 
-Sixteen projects, sixteen people who read a measurement of mine and shipped
+Seventeen projects, seventeen people who read a measurement of mine and shipped
 a change. All of it is public, in their repos, their replies or their own posts.
 
 - **[Audible Field](https://audible-field.vercel.app)**, a spatial sound piece by
@@ -146,6 +146,11 @@ a change. All of it is public, in their repos, their replies or their own posts.
 - **Circat Thought**, a local AI sampler plugin in JUCE: the browser preview read
   the WAV from disk inside the audio callback. v1.1.2 decodes the clip into
   memory on the message thread, so the audio thread never touches the disk.
+- **[Xenhusk Mixer](https://github.com/xenhusk/xenhuskmixer)**, a Windows
+  mixer in JUCE: below its threshold the denoise dropped to 0.08 gain in a
+  single sample, a 22 dB step with no ramp, so word onsets and tails clicked.
+  It now fades over about 5 ms through the same smoother the gate uses, with a
+  test that checks the first quiet sample and the settled gain.
 
 ## How to start
 
